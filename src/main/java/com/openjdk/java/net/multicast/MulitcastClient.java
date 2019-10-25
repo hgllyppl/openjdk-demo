@@ -12,9 +12,9 @@ public class MulitcastClient {
 
     public static void main(String[] args) throws IOException {
         byte[] data = "multicast test".getBytes();
-        MulticastSocket ms = new MulticastSocket();
+        MulticastSocket multicastSocket = new MulticastSocket();
         DatagramPacket dataPacket = new DatagramPacket(data, data.length, new InetSocketAddress("224.0.0.1", 8080));
-        ms.send(dataPacket);
-        ms.close();
+        multicastSocket.send(dataPacket);
+        multicastSocket.close();
     }
 }
